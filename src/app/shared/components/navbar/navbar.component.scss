@@ -1,0 +1,140 @@
+:host {
+  --nav-bg: #1e1e24;
+  --nav-border: #2d2d34;
+  --text-primary: #f3f4f6;
+  --text-secondary: #a1a1aa;
+  --accent: #818cf8;
+  --danger: #ef4444;
+  --danger-hover: #dc2626;
+}
+
+/* Base Navbar Layout */
+.navbar {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Brand Logo Section */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.brand-icon {
+  font-size: 1.5rem;
+}
+
+.brand-text {
+  color: var(--text-primary);
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: -0.025em;
+}
+
+/* Navigation Menu Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  height: 100%;
+}
+
+.nav-item {
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+  position: relative;
+}
+
+.nav-item:hover {
+  color: var(--text-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Angular Active Route Styling */
+.nav-item.active-link {
+  color: var(--accent);
+}
+
+.nav-item.active-link::after {
+  content: "";
+  position: absolute;
+  bottom: -14px; /* Aligns indicator perfectly with navbar bottom edge */
+  left: 0;
+  right: 0;
+  height: 3px;
+  background-color: var(--accent);
+  border-radius: 3px 3px 0 0;
+}
+
+/* Logout Action Button */
+.btn-logout {
+  background-color: transparent;
+  color: var(--text-secondary);
+  border: 1px solid var(--nav-border);
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-logout .btn-icon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.2s ease;
+}
+
+/* Hover effects for Logout */
+.btn-logout:hover {
+  color: #ffffff;
+  background-color: var(--danger);
+  border-color: var(--danger);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.25);
+}
+
+.btn-logout:hover .btn-icon {
+  transform: translateX(2px); /* Subtle shift forward on hover */
+}
+
+/* Responsive adjustment for small screens */
+@media (max-width: 640px) {
+  .nav-container {
+    padding: 0 1rem;
+  }
+  .brand-text {
+    display: none; /* Collapses text to just show the emoji logo on tiny screens */
+  }
+  .nav-links {
+    gap: 0.75rem;
+  }
+}

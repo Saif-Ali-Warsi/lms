@@ -1,1 +1,18 @@
-<p>home works!</p>
+<div class="book-container">
+  <h2>Books Collection</h2>
+
+  <div class="book-grid">
+    <ng-container *ngFor="let book of books">
+      <div class="book-card">
+        <h3>{{ book.title }}</h3>
+        <div class="book-meta">
+          <p><span class="label">Category:</span> {{ book.category }}</p>
+          <p><span class="label">Published:</span> {{ book.publishedYear }}</p>
+        </div>
+        <button class="delete-override" (click)="deleteBook(book._id)">
+          Delete
+        </button>
+      </div>
+    </ng-container>
+  </div>
+</div>

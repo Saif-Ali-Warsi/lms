@@ -1,0 +1,99 @@
+/* Color Variables for easy customization */
+:host {
+  --bg-primary: #121214;
+  --bg-surface: #1e1e24;
+  --bg-surface-hover: #2a2a32;
+  --text-primary: #f3f4f6;
+  --text-secondary: #a1a1aa;
+  --accent: #818cf8; /* Modern Indigo/Violet accent */
+  --border-color: #2d2d34;
+}
+
+/* Container spacing */
+.book-container {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  padding: 2rem;
+  font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  min-height: 100vh;
+}
+
+/* Header Style */
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+  border-left: 4px solid var(--accent);
+  padding-left: 0.75rem;
+}
+
+/* Grid Layout - automatically adjusts column count based on screen size */
+.book-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Individual Book Card */
+.book-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background-color 0.2s ease;
+}
+
+/* Card Hover Effects */
+.book-card:hover {
+  background-color: var(--bg-surface-hover);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  border-color: var(--accent);
+}
+
+/* Book Title */
+.book-card h3 {
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text-primary);
+}
+
+/* Meta Wrapper */
+.book-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* Metadata Text */
+.book-meta p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* Prefix Labels (Category:, Published:) */
+.book-meta .label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  font-weight: 600;
+  margin-right: 0.25rem;
+}
+
+.delete-override {
+  color: #e95d5d;
+  padding: 0;
+  height: auto;
+  min-width: auto;
+  border-radius: 4px;
+  border: none;
+  margin: 10px 0 0;
+}
