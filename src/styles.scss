@@ -1,12 +1,15 @@
 $theme-color: #ff9500;
+$dark-theme-color: #262e2e;
+$white-color: #ffffff;
+$error-color: #ff8b8b;
 
 body {
   font-family: "Open Sans", sans-serif;
   font-style: normal;
   letter-spacing: 0.3px;
   box-sizing: border-box;
-  color: #ffffff;
-  background-color: #262e2e;
+  color: $white-color;
+  background-color: $dark-theme-color;
 }
 
 .wrapper {
@@ -134,9 +137,9 @@ a {
   font-size: 0.75rem;
   font-weight: 500;
   margin: 10px 0 0;
-  color: #ff8b8b;
+  color: $error-color;
 }
 
 .danger {
-  color: #ff8b8b;
+  color: $error-color;
 }
