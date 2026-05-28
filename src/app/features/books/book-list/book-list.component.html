@@ -1,0 +1,35 @@
+<div class="book-container">
+  <h2>Books Collection</h2>
+
+  <div class="form-field">
+    <input
+      type="text"
+      placeholder="Search books..."
+      [ngModel]="searchTerm"
+      (ngModelChange)="onSearch($event)"
+    />
+  </div>
+
+  <div class="book-grid">
+    <ng-container *ngFor="let book of books">
+      <div class="book-card">
+        <h3>{{ book.title }}</h3>
+        <div class="book-meta">
+          <p><span class="label">Category:</span> {{ book.category }}</p>
+          <p><span class="label">Published:</span> {{ book.publishedYear }}</p>
+        </div>
+        <div class="btn-group">
+          <button
+            class="edit-override"
+            [routerLink]="['/books/edit', book._id]"
+          >
+            Edit
+          </button>
+          <button class="delete-override" (click)="deleteBook(book._id)">
+            Delete
+          </button>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</div>

@@ -13,6 +13,8 @@ import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { AddBookComponent } from './features/books/add-book/add-book.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { EditBookComponent } from './features/books/edit-book/edit-book.component';
+import { BookListComponent } from './features/books/book-list/book-list.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { EditBookComponent } from './features/books/edit-book/edit-book.componen
     HomeComponent,
     AddBookComponent,
     NavbarComponent,
-    EditBookComponent
+    EditBookComponent,
+    BookListComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
 
   ],
   providers: [{
