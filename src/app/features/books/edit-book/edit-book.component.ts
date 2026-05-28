@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { BooksService } from '../books.service';
 
 @Component({
@@ -16,6 +16,7 @@ export class EditBookComponent implements OnInit {
 
   constructor(private fb: FormBuilder,
     private route: ActivatedRoute,
+    private router: Router,
     private bookService: BooksService) { }
 
 
@@ -50,6 +51,20 @@ export class EditBookComponent implements OnInit {
 
       this.editForm.patchValue(response.book);
     })
+  }
+
+  onUpdate() {
+    if (this.editForm.invalid) {
+      return;
+    }
+
+    this.bookService.updateBook(this.bookId, this.editForm.value).subscribe((response: any) => {
+      console.log(response);
+      alert('Book updated success');
+
+      this.router.navigate(['/dashboard'])
+    });
+
   }
 
 }

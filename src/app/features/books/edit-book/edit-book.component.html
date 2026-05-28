@@ -1,7 +1,7 @@
 <div class="wrapper mt-30">
   <h2>Edit Book</h2>
 
-  <form [formGroup]="editForm">
+  <form [formGroup]="editForm" (ngSubmit)="onUpdate()">
     <div class="form-field">
       <input type="text" formControlName="title" placeholder="Title" />
     </div>
@@ -18,5 +18,7 @@
         placeholder="Published Year"
       />
     </div>
+
+    <button type="submit">Update Book</button>
   </form>
 </div>
