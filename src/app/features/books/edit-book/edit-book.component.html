@@ -1,0 +1,22 @@
+<div class="wrapper mt-30">
+  <h2>Edit Book</h2>
+
+  <form [formGroup]="editForm">
+    <div class="form-field">
+      <input type="text" formControlName="title" placeholder="Title" />
+    </div>
+    <div class="form-field">
+      <input type="text" formControlName="author" placeholder="Author" />
+    </div>
+    <div class="form-field">
+      <input type="text" formControlName="category" placeholder="Category" />
+    </div>
+    <div class="form-field">
+      <input
+        type="number"
+        formControlName="publishedYear"
+        placeholder="Published Year"
+      />
+    </div>
+  </form>
+</div>

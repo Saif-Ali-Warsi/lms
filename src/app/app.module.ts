@@ -12,6 +12,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
 import { AddBookComponent } from './features/books/add-book/add-book.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
+import { EditBookComponent } from './features/books/edit-book/edit-book.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
     RegisterComponent,
     HomeComponent,
     AddBookComponent,
-    NavbarComponent
+    NavbarComponent,
+    EditBookComponent
   ],
   imports: [
     BrowserModule,

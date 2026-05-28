@@ -9,9 +9,17 @@
           <p><span class="label">Category:</span> {{ book.category }}</p>
           <p><span class="label">Published:</span> {{ book.publishedYear }}</p>
         </div>
-        <button class="delete-override" (click)="deleteBook(book._id)">
-          Delete
-        </button>
+        <div class="btn-group">
+          <button
+            class="edit-override"
+            [routerLink]="['/books/edit', book._id]"
+          >
+            Edit
+          </button>
+          <button class="delete-override" (click)="deleteBook(book._id)">
+            Delete
+          </button>
+        </div>
       </div>
     </ng-container>
   </div>

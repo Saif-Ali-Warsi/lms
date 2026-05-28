@@ -78,7 +78,6 @@ h2 {
   color: var(--text-secondary);
 }
 
-/* Prefix Labels (Category:, Published:) */
 .book-meta .label {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -88,12 +87,24 @@ h2 {
   margin-right: 0.25rem;
 }
 
-.delete-override {
-  color: #e95d5d;
+.delete-override,
+.edit-override {
   padding: 0;
   height: auto;
   min-width: auto;
   border-radius: 4px;
   border: none;
   margin: 10px 0 0;
+}
+
+.delete-override {
+  color: #e95d5d;
+}
+.edit-override {
+  color: #ffffff;
+}
+
+.btn-group {
+  display: flex;
+  gap: 10px;
 }

@@ -16,6 +16,14 @@ export class BooksService {
     return this.http.get<any>(`${this.baseUrl}/books`)
   }
 
+  getBookById(id: string) {
+    return this.http.get(`${this.baseUrl}/books/${id}`)
+  }
+
+  updateBook(id: string, data: any) {
+    return this.http.put(`${this.baseUrl}/books/${id}`, data)
+  }
+
   addBook(data: any) {
     return this.http.post(`${this.baseUrl}/books`, data)
   }
