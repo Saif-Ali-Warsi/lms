@@ -15,6 +15,7 @@ import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { EditBookComponent } from './features/books/edit-book/edit-book.component';
 import { BookListComponent } from './features/books/book-list/book-list.component';
 import { FormsModule } from '@angular/forms';
+import { LoaderComponent } from './shared/components/loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { FormsModule } from '@angular/forms';
     AddBookComponent,
     NavbarComponent,
     EditBookComponent,
-    BookListComponent
+    BookListComponent,
+    LoaderComponent
   ],
   imports: [
     BrowserModule,

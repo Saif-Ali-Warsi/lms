@@ -16,7 +16,7 @@ export class BookListComponent implements OnInit {
 
   currentPage: number = 1;
 
-  limit: number = 5;
+  limit: number = 15;
 
   totalBooks: number = 0;
 
