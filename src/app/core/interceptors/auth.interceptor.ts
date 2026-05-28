@@ -5,13 +5,14 @@ import {
   HttpEvent,
   HttpInterceptor
 } from '@angular/common/http';
-import { Observable, finalize } from 'rxjs';
+import { Observable, finalize, catchError, throwError } from 'rxjs';
 import { LoaderService } from '../services/loader.service';
+import { Router } from '@angular/router';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  constructor(private loaderService: LoaderService) { }
+  constructor(private loaderService: LoaderService, private router:Router) { }
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
 
@@ -29,6 +30,22 @@ export class AuthInterceptor implements HttpInterceptor {
     }
 
     return next.handle(request).pipe(
+
+      catchError((error)=>{
+        console.log(error)
+
+        if(error.status === 401 || error.status === 403){
+          localStorage.clear();
+
+          this.router.navigate(['/']);
+        }
+
+        alert(error.error.message || 'Something went wrong')
+
+        return throwError(()=>error);
+        
+      }),
+
       finalize(() => {
         this.loaderService.hideLoader();
       })

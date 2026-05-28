@@ -27,21 +27,10 @@ const routes: Routes = [
     component: HomeComponent,
     canActivate: [AuthGuard]
   },
-  {
-    path: 'books',
-    component: BookListComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'books/add',
-    component: AddBookComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: 'books/edit/:id',
-    component: EditBookComponent,
-    canActivate: [AuthGuard]
-  }
+{
+  path:'books',
+  loadChildren:()=>import('./features/books/books.module').then(m => m.BooksModule)
+}
 ];
 
 @NgModule({

@@ -6,13 +6,13 @@
     </div>
 
     <div class="nav-links">
-      <a routerLink="/dashboard" routerLinkActive="active-link" class="nav-item"
+      <a routerLink="/dashboard" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="nav-item"
         >Dashboard</a
       >
-      <a routerLink="/books" routerLinkActive="active-link" class="nav-item"
+      <a routerLink="/books" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="nav-item"
         >Books</a
       >
-      <a routerLink="/books/add" routerLinkActive="active-link" class="nav-item"
+      <a routerLink="/books/add" routerLinkActive="active-link" [routerLinkActiveOptions]="{ exact: true }" class="nav-item"
         >Add Book</a
       >
     </div>

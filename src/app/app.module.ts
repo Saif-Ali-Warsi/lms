@@ -10,10 +10,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './core/interceptors/auth.interceptor';
-import { AddBookComponent } from './features/books/add-book/add-book.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
-import { EditBookComponent } from './features/books/edit-book/edit-book.component';
-import { BookListComponent } from './features/books/book-list/book-list.component';
 import { FormsModule } from '@angular/forms';
 import { LoaderComponent } from './shared/components/loader/loader.component';
 
@@ -23,10 +20,7 @@ import { LoaderComponent } from './shared/components/loader/loader.component';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    AddBookComponent,
     NavbarComponent,
-    EditBookComponent,
-    BookListComponent,
     LoaderComponent
   ],
   imports: [
